@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="/get_feedbacks" method="post">
+	    <table>
+        <thead>
+           <tr>
+               <th>Name</th>
+               <th>Email</th>
+			   
+               
+			   
+			   
+
+           </tr> 
+        </thead>
+        <tbody>
+            {%for customer in customers %}
+            <tr>
+                <td>{{customer[1]}}</td>
+                <td>{{customer[2]}}</td>
+				
+            
+				
+				
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+      
+
+    </form>
+	   <nav>
+        <ul>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+
+
+<script>
+    {% if request.args.get('msg')%}
+        alert("{{request.args.get('msg')}}");
+    {% endif %}
+</script>
+
+
+</body>
+</html>
